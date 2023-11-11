@@ -2,6 +2,7 @@ import { Console } from "@woowacourse/mission-utils";
 import InputView from "./InputView.js";
 import OutputView from "./OutputView.js";
 import CalculateTotal from "./CalculateTotal.js";
+import CalculateBenefit from "./CalculateBenefit.js";
 
 class App {
   async run() {
@@ -19,6 +20,12 @@ class App {
     OutputView.printMenu(orderList);
     OutputView.printTotalBeforeDiscount(totalBefore);
     OutputView.printGift(totalBefore);
+
+    const benefitList = CalculateBenefit.calculateBenefit(
+      visitDate,
+      orderList,
+      totalBefore
+    );
   }
 }
 
