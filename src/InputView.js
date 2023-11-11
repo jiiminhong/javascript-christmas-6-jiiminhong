@@ -8,9 +8,17 @@ const InputView = {
   },
 
   async readMenu() {
+    const orders = [];
     const input = await Console.readLineAsync(
       "주문하실 메뉴를 메뉴와 개수로 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)"
-    );
+    ).split(",");
+
+    for (const i of input) {
+      const [menu, count] = i.split("-");
+      orders.push({ menu, count: count });
+    }
+
+    return orders;
   },
 };
 
