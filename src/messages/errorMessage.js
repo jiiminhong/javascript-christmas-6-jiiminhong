@@ -5,7 +5,6 @@ const DATE_ERROR = Object.freeze({
 
 const MENU_ERROR = Object.freeze({
   valid: "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.",
-  type: "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.",
   form: "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.",
   duplication: "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.",
 });
