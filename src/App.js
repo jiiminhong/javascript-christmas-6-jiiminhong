@@ -15,7 +15,10 @@ class App {
     );
 
     const totalBefore = CalculateTotal.calculateTotalBefore(orderList);
-    OutputView.printMenu(totalBefore);
+
+    OutputView.printMenu(orderList);
+    OutputView.printTotalBeforeDiscount(totalBefore);
+    OutputView.printGift(totalBefore);
   }
 }
 
