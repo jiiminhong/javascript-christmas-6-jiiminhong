@@ -26,9 +26,16 @@ const OutputView = {
   printBenefits(benefitList) {
     Console.print("<혜택 내역>");
 
+    let count = 5;
+
     Object.values(benefitList).map((benefit) => {
-      Console.print(`${benefit.name}: -${benefit.discount}원`);
+      if (benefit.discount !== 0) {
+        Console.print(`${benefit.name}: -${benefit.discount}원`);
+        count--;
+      }
     });
+
+    if (count == 0) Console.print("없음");
   },
 
   printTotalDiscount(benefitList, totalBefore) {
