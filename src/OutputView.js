@@ -46,6 +46,24 @@ const OutputView = {
     Console.print("<할인 후 예상 결제 금액>");
     Console.print(`${totalPayment.toLocaleString()}원`);
   },
+
+  printBadge(totalBenefit) {
+    Console.print("<12월 이벤트 배지>");
+
+    switch (totalBenefit) {
+      case totalBenefit >= 20000:
+        Console.print("산타");
+        break;
+      case totalBenefit >= 10000 && totalBenefit < 20000:
+        Console.print("트리");
+        break;
+      case totalBenefit >= 5000 && totalBenefit < 10000:
+        Console.print("별");
+        break;
+      default:
+        Console.print("없음");
+    }
+  },
 };
 
 export default OutputView;
