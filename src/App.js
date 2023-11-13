@@ -27,6 +27,7 @@ class App {
       totalBefore
     );
 
+    OutputView.printBenefits(benefitList);
     OutputView.printTotalDiscount(benefitList, totalBefore);
   }
 }

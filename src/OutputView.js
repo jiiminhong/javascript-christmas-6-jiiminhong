@@ -23,6 +23,14 @@ const OutputView = {
     );
   },
 
+  printBenefits(benefitList) {
+    Console.print("<혜택 내역>");
+
+    Object.values(benefitList).map((benefit) => {
+      Console.print(`${benefit.name}: -${benefit.discount}원`);
+    });
+  },
+
   printTotalDiscount(benefitList, totalBefore) {
     const totalBenefit = Object.values(benefitList.discount).reduce(
       (acc, cur) => acc + cur,
