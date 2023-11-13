@@ -5,3 +5,5 @@ const validateDate = (date) => {
 
   if (isNaN(date)) throw new Error(DATE_ERROR.type);
 };
+
+export default validateDate;

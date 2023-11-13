@@ -9,3 +9,5 @@ const validateMenu = (menu) => {
 
   // 중복 추가
 };
+
+export default validateMenu;
