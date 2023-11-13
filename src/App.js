@@ -3,6 +3,7 @@ import InputView from "./InputView.js";
 import OutputView from "./OutputView.js";
 import CalculateTotal from "./CalculateTotal.js";
 import CalculateBenefit from "./CalculateBenefit.js";
+import CalculateDiscount from "./CalculateDiscount.js";
 
 class App {
   async run() {
@@ -26,9 +27,10 @@ class App {
       orderList,
       totalBefore
     );
+    const totalBenefit = CalculateDiscount.calculateDiscount(benefitList);
 
     OutputView.printBenefits(benefitList);
-    OutputView.printTotalDiscount(benefitList, totalBefore);
+    OutputView.printTotalDiscount(totalBenefit, totalBefore);
   }
 }
 

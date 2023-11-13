@@ -38,12 +38,7 @@ const OutputView = {
     if (count == 0) Console.print("없음");
   },
 
-  printTotalDiscount(benefitList, totalBefore) {
-    const totalBenefit = Object.values(benefitList.discount).reduce(
-      (acc, cur) => acc + cur,
-      0
-    );
-
+  printTotalDiscount(totalBenefit, totalBefore) {
     const totalPayment = totalBefore - totalBenefit;
 
     Console.print("<총혜택 금액>");
