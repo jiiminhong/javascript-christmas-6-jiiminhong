@@ -24,7 +24,7 @@ const OutputView = {
   },
 
   printTotalDiscount(benefitList, totalBefore) {
-    const totalBenefit = Object.values(benefitList).reduce(
+    const totalBenefit = Object.values(benefitList.discount).reduce(
       (acc, cur) => acc + cur,
       0
     );
