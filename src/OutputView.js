@@ -22,6 +22,20 @@ const OutputView = {
         : Console.print("없음")
     );
   },
+
+  printTotalDiscount(benefitList, totalBefore) {
+    const totalBenefit = Object.values(benefitList).reduce(
+      (acc, cur) => acc + cur,
+      0
+    );
+
+    const totalPayment = totalBefore - totalBenefit;
+
+    Console.print("<총혜택 금액>");
+    Console.print(`-${totalBenefit.toLocaleString()}원`);
+    Console.print("<할인 후 예상 결제 금액>");
+    Console.print(`${totalPayment.toLocaleString()}원`);
+  },
 };
 
 export default OutputView;

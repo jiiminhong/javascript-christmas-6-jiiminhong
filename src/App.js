@@ -26,6 +26,8 @@ class App {
       orderList,
       totalBefore
     );
+
+    OutputView.printTotalDiscount(benefitList, totalBefore);
   }
 }
 
