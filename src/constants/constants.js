@@ -13,4 +13,8 @@ const MENU_CONSTANTS = Object.freeze({
   샴페인: { price: 25000, type: "drink" },
 });
 
-module.exports = { MENU_CONSTANTS };
+const MAX_MENU_CONSTANTS = Object.freeze({
+  maxMenu: 20,
+});
+
+module.exports = { MENU_CONSTANTS, MAX_MENU_CONSTANTS };
