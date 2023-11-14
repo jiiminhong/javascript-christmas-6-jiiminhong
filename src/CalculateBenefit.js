@@ -1,3 +1,4 @@
+import { Console } from "@woowacourse/mission-utils";
 import { MENU_CONSTANTS } from "./constants/constants";
 
 const CalculateBenefit = {
@@ -13,13 +14,13 @@ const CalculateBenefit = {
 
     if (totalBefore >= 10000) {
       if (visitDate <= 25)
-        benefit.christmasDiscount.discount = 1000 + 100(visitDate - 1);
+        benefit.christmasDiscount.discount = 1000 + 100 * (visitDate - 1);
 
       if (date.getDay() >= 0 && date.getDay() <= 4)
-        calculateDessertDiscount(orderList);
+        this.calculateDessertDiscount(orderList, benefit);
 
       if (date.getDay() === 5 || date.getDay() === 6)
-        calculateWeekendDiscount(orderList);
+        this.calculateWeekendDiscount(orderList, benefit);
 
       if ([3, 10, 17, 24, 25, 31].includes(visitDate))
         benefit.specialDiscount.discount = 1000;
@@ -30,8 +31,8 @@ const CalculateBenefit = {
     return benefit;
   },
 
-  calculateDessertDiscount(orderList) {
-    orderList.forEach((menu) => {
+  calculateDessertDiscount(orderList, benefit) {
+    orderList.map((menu) => {
       const menuItem = MENU_CONSTANTS[menu.menu];
 
       if (menuItem.type === "dessert")
@@ -39,8 +40,8 @@ const CalculateBenefit = {
     });
   },
 
-  calculateWeekendDiscount(orderList) {
-    orderList.forEach((menu) => {
+  calculateWeekendDiscount(orderList, benefit) {
+    orderList.map((menu) => {
       const menuItem = MENU_CONSTANTS[menu.menu];
 
       if (menuItem.type === "main")

@@ -1,9 +1,10 @@
 const CalculateDiscount = {
   calculateDiscount(benefitList) {
-    const totalBenefit = Object.values(benefitList.discount).reduce(
-      (acc, cur) => acc + cur,
-      0
-    );
+    let totalBenefit = 0;
+
+    Object.values(benefitList).forEach((benefit) => {
+      totalBenefit += benefit.discount;
+    });
 
     return totalBenefit;
   },

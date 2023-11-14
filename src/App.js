@@ -36,9 +36,11 @@ class App {
         orderList,
         totalBefore
       );
-      const totalBenefit = CalculateDiscount.calculateDiscount(benefitList);
 
       OutputView.printBenefits(benefitList);
+
+      const totalBenefit = CalculateDiscount.calculateDiscount(benefitList);
+
       OutputView.printTotalDiscount(totalBenefit, totalBefore);
       OutputView.printBadge(totalBenefit);
     });

@@ -14,13 +14,9 @@ const OutputView = {
   },
 
   printGift(totalBefore) {
-    Console.print("증정 메뉴");
+    Console.print("<증정 메뉴>");
 
-    Console.print(
-      totalBefore >= 120000
-        ? Console.print("샴페인 1개")
-        : Console.print("없음")
-    );
+    Console.print(totalBefore >= 120000 ? "샴페인 1개" : "없음");
   },
 
   printBenefits(benefitList) {
@@ -28,14 +24,17 @@ const OutputView = {
 
     let count = 5;
 
-    Object.values(benefitList).map((benefit) => {
+    const benefitArr = Object.values(benefitList);
+    benefitArr.forEach((benefit) => {
       if (benefit.discount !== 0) {
-        Console.print(`${benefit.name}: -${benefit.discount}원`);
+        Console.print(
+          `${benefit.name}: -${benefit.discount.toLocaleString()}원`
+        );
         count--;
       }
     });
 
-    if (count == 0) Console.print("없음");
+    if (count === 5) Console.print("없음");
   },
 
   printTotalDiscount(totalBenefit, totalBefore) {
