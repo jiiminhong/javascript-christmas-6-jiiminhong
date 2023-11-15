@@ -1,6 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 import validateDate from "./validation/validateDate";
 import validateMenu from "./validation/validateMenu";
+import validateOrder from "./validation/validateOrder";
 
 const InputView = {
   async readDate() {
@@ -24,6 +25,7 @@ const InputView = {
       return { menu: name, count: quantity };
     });
 
+    validateOrder(orders);
     validateMenu(orders);
 
     return orders;
