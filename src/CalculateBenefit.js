@@ -12,6 +12,18 @@ const CalculateBenefit = {
       giftEvent: { name: "증정 이벤트", discount: 0 },
     };
 
+    this.calculateBenefitConditions(
+      totalBefore,
+      visitDate,
+      benefit,
+      date,
+      orderList
+    );
+
+    return benefit;
+  },
+
+  calculateBenefitConditions(totalBefore, visitDate, benefit, date, orderList) {
     if (totalBefore >= 10000) {
       if (visitDate <= 25)
         benefit.christmasDiscount.discount = 1000 + 100 * (visitDate - 1);
